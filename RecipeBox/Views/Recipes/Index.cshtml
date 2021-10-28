@@ -1,0 +1,32 @@
+@{
+  Layout = "_Layout";
+}
+
+@using RecipeBox.Models;
+@model List<RecipeBox.Models.Recipe>
+@using (Html.BeginForm())
+{
+  <p>Ingredient : @Html.TextBox("SearchString")
+  <input type= "submit" value = "Search"/> </p>
+}
+<h1>Recipes for @User.Identity.Name</h1>
+
+@if (Model.Any())
+{
+  <ul>
+    @foreach (Recipe Recipe in Model)
+    {
+    <li>@Html.ActionLink($"{Recipe.Description}", "Details", new { id = Recipe.RecipeId })</li>
+    <p>@Recipe.Rating</p>
+    }
+
+  </ul>
+} 
+else
+{
+  <h3>No Recipes have been added yet!</h3>
+}
+
+<p>@Html.ActionLink("Add new Recipe", "Create")</p>
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

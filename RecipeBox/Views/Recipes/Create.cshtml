@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RecipeBox.Models.Recipe
+
+<h4>Add a new Recipe</h4>
+
+@using (Html.BeginForm())
+{
+  <label for="Description">Description:</label>
+  @Html.TextBoxFor(model => model.Description)
+
+ <label for="Rating">Rating:</label>
+  @Html.TextBoxFor(model => model.Rating)
+
+  <label for="CategoryId">Select Category:</label>
+  @Html.DropDownList("CategoryId")
+
+  <input type="submit" value="Add new Recipe" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all Recipes", "Index")</p>
