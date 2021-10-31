@@ -28,3 +28,5 @@ git clone https://github.com/littlestbrother/MVCAuthBuilder && cd MVCAuthBuilder
 ### That's it.
 
 The builder should automatically create the project and run the server. Navigate to: [http://localhost:5000/](http://localhost:5000/) to use it.
+
+[//]: <> (This is a comment.)
